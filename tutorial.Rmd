@@ -127,7 +127,7 @@ usethis::use_github()
 
 When you create a new project in Rstudio, you can select the version control option and enter the GitHub URL to link it to your project. The repository's URL is found on its main page by clicking on the green "Code" button.
 
-![Annoted screen shot of a GitHub repository](describedScreenshot.png)
+![Annoted screen shot of a GitHub repository](figures/describedScreenshot.png)
 
 # What now?
 
@@ -157,6 +157,17 @@ git pull
 ```
 
 When commits are pushed from a different source into the GitHub repository (e.g. from a collaborator), you are going to have first to pull the updated code locally before being able to push your own commits to the GitHub repository. Git automatically merges commits that are pulled locally but sometimes there might be some merging conflicts needing to be resolved by the user.
+
+This is the message telling you there are merges to solve manually
+![](figures/mergingconflictTerminal.png)
+
+The conflict is going to be surrounded by less (<) and greater (>) symbols. The firs part called HEAD is your local commit whereas the second part, separated by the equal (=) symbol is the remote commit. There you need to solve the problem and delete the symbols.
+
+![](figures/mergingConflictUnsolved.png)
+
+Below is the resolved conflict which is ready to be commited. You will note that the conflict is notified by a orange U in the git window which become a blue M once the conflict is resolved.
+
+![](figures/mergingConflictSolved.png)
 
 
 ## Branches and why do it?
