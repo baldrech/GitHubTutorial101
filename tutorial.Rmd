@@ -291,11 +291,18 @@ git reset HEAD^
 
 This will delete the commits from the branch, but leave the working tree around.
 
-If you want to save the commits on a new branch name, then create the branch first before reseting
+If you want to save the commits on a new branch name, then create the branch first before resetting.
 
 ```{bash}
 git branch newbranchname
 ```
+
+If you wish to remove commits from the remote, first pull the commits locally, reset the ones you want to remove using the above commands then use the command below to update the remote
+
+```{bash}
+git push origin +HEAD
+```
+
 
 If you want to restore deleted commits: http://gitready.com/advanced/2009/01/17/restoring-lost-commits.html
 (haven't tried yet)
