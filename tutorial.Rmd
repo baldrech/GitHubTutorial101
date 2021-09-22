@@ -361,6 +361,11 @@ To see remote and local branches with their tracking info.
 git remote show origin
 ```
 
+To pull from the upstream repository (need to specify which branch we are pulling)
+```{bash}
+git pull upstream master
+
+```
 
 
 And remember,
