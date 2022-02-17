@@ -377,3 +377,37 @@ Useful links:
 http://r-bio.github.io/git-installation/
 
 https://docs.github.com/en/get-started/quickstart/set-up-git
+
+
+## To add somewhere
+
+check remote branches and if they have local states
+
+```{bash}
+git branch -r
+```
+
+other version with more details
+
+```{bash}
+
+git branch -v -a
+
+```
+
+I think need to do git fetch first at least once if want to fetch a particular branch from remote
+ 
+```{bash}
+
+git checkout -b branchName
+
+
+```
+ 
+ 
+Push my-branch to github (another alias for a different origin) and set it to track github/my-branch
+
+```{bash}
+git push -u github my-branch
+```
+ 
