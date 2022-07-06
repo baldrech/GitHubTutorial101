@@ -208,7 +208,7 @@ git branch -d branchName
 
 Practical: edit something in a new branch then come back to master -> the changes are not there!
 
-Note: Rstudio buttons have a hard time following what we are doing, it is better to use the console anyway...
+Note: Rstudio buttons have a hard time following what we are doing, it is better to use the console...
 
 Short cut to create a new branch and switch to it:
 
@@ -247,6 +247,26 @@ If you want to delete the remote branch:
 git push origin --delete branchName
 ```
 (We are pushing the deletion from our local repository)
+
+Now let's assume you want to work on a GitHub repository from a new machine that has no local repositories/branches
+
+Check remote branches and if they have local states
+
+```{bash}
+git branch -r
+```
+
+Other version with more details
+
+```{bash}
+git branch -v -a
+```
+
+With this you can see all the different branches from the repository. If you created a new R project from GitHub, only the master branch will be downloaded. To download remote branch locally:
+
+```{bash}
+git checkout -b branchName origin/branchName
+```
 
 
 ## Getting familiar with the commits
@@ -367,6 +387,11 @@ git pull upstream master
 
 ```
 
+Push my-branch to github (another alias for a different origin) and set it to track github/my-branch
+
+```{bash}
+git push -u github my-branch
+```
 
 And remember,
 
@@ -381,19 +406,6 @@ https://docs.github.com/en/get-started/quickstart/set-up-git
 
 ## To add somewhere
 
-check remote branches and if they have local states
-
-```{bash}
-git branch -r
-```
-
-other version with more details
-
-```{bash}
-
-git branch -v -a
-
-```
 
 I think need to do git fetch first at least once if want to fetch a particular branch from remote
  
@@ -401,13 +413,8 @@ I think need to do git fetch first at least once if want to fetch a particular b
 
 git checkout -b branchName
 
-
 ```
  
  
-Push my-branch to github (another alias for a different origin) and set it to track github/my-branch
 
-```{bash}
-git push -u github my-branch
-```
  
