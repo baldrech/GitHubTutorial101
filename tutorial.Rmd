@@ -339,6 +339,15 @@ If you want to restore deleted commits: http://gitready.com/advanced/2009/01/17/
 (haven't tried yet)
 
 
+If you tried to pull from GitHub without commiting your local changes, you will get an error. If after commiting, git refuses to pull with the error "Fatal: Not possible to fast-forward, aborting", do not lose hope, you can still force git to pull with this command:
+
+```{bash}
+
+git pull --rebase
+
+```
+
+
 
 ## Forking and pull requests
 
@@ -416,5 +425,16 @@ git checkout -b branchName
 ```
  
  
+It can be done with any repository, just add the remote address and fetch it first
+
+
+```{bash}
+
+git remote add upstream https:...
+git fetch upstream
+git checkout -b newBranch upstream/master
+
+```
+
 
  
