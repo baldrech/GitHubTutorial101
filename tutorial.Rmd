@@ -111,7 +111,34 @@ You need to enter your PAT in the password slot. The password used to connect to
 
 Now you will be able to host your R projects into GitHub repositories!
 
+#### Note on using a linux server
 
+Rstudio installed on linux server, such as when using a nectar instance, do not have a proper way to store credentials. The default behavior is limited to a cache with a lifespan of 900 seconds. To store your PAT run
+
+```{bash}
+git config --global credential.helper store
+
+```
+
+Then commit once using your username and PAT when prompted.
+
+Another solution is to set your PAT in your Renviron.r
+
+```{r}
+usethis::edit_r_environ()
+
+```
+
+Then add
+
+```{r}
+#GITHUB_PAT=40charactersPAT
+#
+```
+
+Do not forget to add an empty line at the end then, restart the R session to take changes into account.
+
+This seems to be the general solution but it does not work for me.
 
 ### Connecting from Rstudio
 
@@ -435,6 +462,5 @@ git fetch upstream
 git checkout -b newBranch upstream/master
 
 ```
-
 
  
