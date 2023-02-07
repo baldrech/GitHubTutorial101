@@ -267,6 +267,47 @@ Terminal shows what are the difference between the two branches.
 
 We are done with the test branch now and can remove it.
 
+What if we want to merge only some specific files from the one branch to the other?
+Once again, we need to be in the branch that will receive the changes then:
+
+```{bash}
+
+git checkout --patch branchName file.R
+
+```
+
+The terminal will then display all the changes between the original file and the one we want to merge, per hunk. For every hunk, you have to choose one of these options
+
+y - stage this hunk
+
+n - do not stage this hunk
+
+q - quit; do not stage this hunk nor any of the remaining ones
+
+a - stage this hunk and all later hunks in the file
+
+d - do not stage this hunk nor any of the later hunks in the file
+
+g - select a hunk to go to
+
+/ - search for a hunk matching the given regex
+
+j - leave this hunk undecided, see next undecided hunk
+
+J - leave this hunk undecided, see next hunk
+
+k - leave this hunk undecided, see previous undecided hunk
+
+K - leave this hunk undecided, see previous hunk
+
+s - split the current hunk into smaller hunks
+
+e - manually edit the current hunk
+
+? - print help
+
+Staging means you accept the changes.
+
 Everything we have done until now was local, how do we get these new branches on GitHub?
 If we are on a new local branch and try to push, it won't work. We need to setup the tracking information of the branch:
 
@@ -307,6 +348,21 @@ With this you can see all the different branches from the repository. If you cre
 ```{bash}
 git checkout -b branchName origin/branchName
 ```
+
+Let's assume now that you have been using GitHub a lot and you wish to get one branch of a repository to become its own repo. To do so, first create a new repository, then locally checkout the branch in your old repo that you want to transfer.
+
+```{bash}
+git push https://github.com/accountname/new-repo.git +branchToTransfer:master
+
+```
+
+If merging conflicts appear, set up a new remote with the adress of your new repo and pull from this remote into your branch.If you get an error of different commit history, use this to pull:
+
+```{bash}
+git pull upstream master --allow-unrelated-histories
+```
+
+Resolve merging issues then try the previous hunk of code again.
 
 
 ## Getting familiar with the commits
