@@ -443,6 +443,20 @@ git pull --rebase
 
 ```
 
+If you wish to check what has been committed locally but not pushed to GitHub yet.
+
+For the name and authors of the different commits (assuming that you are tracking origin and on the main branch).
+
+```{bash}
+git log origin/main..main
+```
+
+For the file detail
+
+```{bash}
+git diff --stat origin/main..main
+
+```
 
 
 ## Forking and pull requests
